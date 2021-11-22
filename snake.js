@@ -43,13 +43,41 @@ function move()
 }
 
 
+function direction(event)
+{
+    let klawisz = event.keyCode;
+    if(klawisz==37)
+    {
+        dx = -10;
+        dy = 0;
+    }
+    else if(klawisz==40)
+    {
+        dy = 10;
+        dx = 0;
+    }
+    else if(klawisz==39)
+    {
+        dy = 0;
+        dx = 10;
+    }
+    else if(klawisz==38)
+    {
+        dy = -10;
+        dx = 0;
+    }
+}
+
+document.addEventListener("keydown", direction);
+
+
 function main()
 {
     setInterval(function step(){
         clear();
         move();
         drawSnake();
-    }, 1000);
+    }, 200);
     
 }
 
