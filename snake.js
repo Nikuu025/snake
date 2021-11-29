@@ -35,15 +35,22 @@ function drawSnakeElement(snakeElement)
 var dx=10;
 var dy=0;
 
-function move(fx, fy)
+function move()
 {
     var head = {x: snake[0].x + dx, y: snake[0].y + dy};
-    snake.unshift(head);
-    snake.pop();
+    
 
     if(fx == snake[0].x && fy == snake[0].y)
     {
         console.log("success");
+        fx = random_number(20, 480);
+        fy = random_number(20, 480);
+        snake.unshift(head);
+    }
+    else 
+    {
+        snake.unshift(head);
+        snake.pop();
     }
 }
 
@@ -110,7 +117,7 @@ function main()
     setInterval(function step(){
         clear();
         random_food(fx, fy);
-        move(fx, fy);
+        move();
         drawSnake();
     }, 100);
     
