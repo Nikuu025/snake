@@ -99,6 +99,15 @@ function game_over()
         container.style.height = "100vh";
 }
 
+document.getElementById("replay").addEventListener("click", replay);
+
+console.log("reload");
+
+function replay()
+{
+    location.reload();
+}
+
 
 function direction(event)
 {
