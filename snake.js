@@ -48,23 +48,35 @@ function direction(event)
     let klawisz = event.keyCode;
     if(klawisz==37)
     {
-        dx = -10;
-        dy = 0;
+        if(dx != 10)
+        {
+            dx = -10;
+            dy = 0;
+        }
     }
     else if(klawisz==40)
     {
-        dy = 10;
-        dx = 0;
+        if(dy != -10)
+        {
+            dy = 10;
+            dx = 0;
+        }
     }
     else if(klawisz==39)
     {
-        dy = 0;
-        dx = 10;
+        if(dx != -10)
+        {
+            dy = 0;
+            dx = 10;
+        }
     }
     else if(klawisz==38)
     {
-        dy = -10;
-        dx = 0;
+        if(dy != 10)
+        {
+            dy = -10;
+            dx = 0;
+        }
     }
 }
 
