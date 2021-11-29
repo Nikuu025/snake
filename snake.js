@@ -226,7 +226,7 @@ if(height < 1060)
 }
 else 
 {
-    speed = 300;
+    speed = 200;
 }
 
 main();
