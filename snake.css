@@ -50,15 +50,18 @@ body
 #replay
 {
     padding: 5px;
-    animation: animacja 2s infinite alternate;
+    animation: animacja 1s infinite alternate;
 }
 
 
 @keyframes animacja
 {
     0% {background-color: red;}
+    1% {background-color: black;}
     50% {background-color: black;}
-    100% {background-color: red;}
+    51% {background-color: red;}
+    99% {background-color: red;}
+    100% {background-color: black;}
 }
 
 
