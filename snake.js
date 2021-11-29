@@ -28,8 +28,8 @@ function drawSnakeElement(snakeElement)
 {
     planszaCtx.fillStyle = "lightgreen";
     planszaCtx.fillRect(snakeElement.x, snakeElement.y, 10, 10);
-    planszaCtx.strokestyle = "black";
-    planszaCtx.strokeRect(snakeElement.x, snakeElement.y, 10, 10);
+    //planszaCtx.strokestyle = "black";
+    //planszaCtx.strokeRect(snakeElement.x, snakeElement.y, 10, 10);
 }
 
 var dx=10;
