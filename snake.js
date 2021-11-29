@@ -83,13 +83,31 @@ function direction(event)
 document.addEventListener("keydown", direction);
 
 
+    function random_number(min, max)
+    {
+        return Math.round((Math.random() * (max-min) + min) / 10) * 10;
+    }
+
+
+    function random_food(x, y)
+    {
+        planszaCtx.fillStyle = "red";
+        planszaCtx.fillRect(x, y, 10, 10);
+        planszaCtx.strokestyle = "black";
+        planszaCtx.strokeRect(x, y, 10, 10);
+    }
+
+    let fx = random_number(20, 480);
+    let fy = random_number(20, 480);
+
 function main()
 {
     setInterval(function step(){
         clear();
+        random_food(fx, fy);
         move();
         drawSnake();
-    }, 200);
+    }, 100);
     
 }
 
