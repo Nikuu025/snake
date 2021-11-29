@@ -72,3 +72,36 @@ body
 
 
 
+
+#phone 
+{
+    width: 498px;
+    height: 498px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.phone_row
+{
+    display: flex;
+    flex-direction: row;
+    width: 498px;
+    height: 166px;
+}
+
+.empty
+{
+    width: 166px;
+    height: 166px;
+}
+
+.direction_button
+{
+    width: 166px;
+    height: 166px;
+    background-color: #333333;
+}
+
+
+

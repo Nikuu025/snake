@@ -93,6 +93,9 @@ function game_over()
         var wynik = document.getElementById("wynik_div");
         wynik.style.display = "none";
 
+        var phone = document.getElementById("phone");
+        phone.style.display = "none";
+
         var container = document.getElementById("container");
         container.style.alignItems = "center";
         container.style.justifyContent = "center";
@@ -109,10 +112,41 @@ function replay()
 }
 
 
+document.getElementById("go_up").addEventListener("click", up);
+document.getElementById("go_left").addEventListener("click", left);
+document.getElementById("go_right").addEventListener("click", right);
+document.getElementById("go_down").addEventListener("click", down);
+
+function up()
+{
+    let przycisk = 38;
+    direction(przycisk);
+}
+
+function down()
+{
+    let przycisk = 40;
+    direction(przycisk);
+}
+
+function left()
+{
+    let przycisk = 37;
+    direction(przycisk);
+}
+
+function right()
+{
+    let przycisk = 39;
+    direction(przycisk);
+}
+
+
 function direction(event)
 {
     let klawisz = event.keyCode;
-    if(klawisz==37)
+    let przycisk = event;
+    if(klawisz==37 || przycisk==37)
     {
         if(dx != 10)
         {
@@ -120,7 +154,7 @@ function direction(event)
             dy = 0;
         }
     }
-    else if(klawisz==40)
+    else if(klawisz==40 || przycisk==40)
     {
         if(dy != -10)
         {
@@ -128,7 +162,7 @@ function direction(event)
             dx = 0;
         }
     }
-    else if(klawisz==39)
+    else if(klawisz==39 || przycisk==39)
     {
         if(dx != -10)
         {
@@ -136,7 +170,7 @@ function direction(event)
             dx = 10;
         }
     }
-    else if(klawisz==38)
+    else if(klawisz==38 || przycisk==38)
     {
         if(dy != 10)
         {
@@ -179,5 +213,14 @@ function main()
     
 }
 
+
+var height = window.innerHeight;
+console.log(height);
+
+if(height < 1060)
+{
+    var phone = document.getElementById("phone");
+    phone.style.display = "none";
+}
 
 main();
