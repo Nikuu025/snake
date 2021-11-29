@@ -57,13 +57,36 @@ function move()
 
     if(snake[0].x == 500 || snake[0].x == 0 || snake[0].y == 500 || snake[0].y == 0)
     {
-        console.log("game over");
+        game_over();
+    }
+
+    //kolizja();
+    console.log(snake.length);
+}
+
+
+function kolizja()
+{
+    console.log(snake.length);
+    for(let a=1; a<snake.length; a++)
+    {
+        if(head.x == snake[a].x && head.y == snake[a].y)
+        {
+            game_over();
+        }
+    }
+}
+
+
+function game_over()
+{
+    console.log("game over");
 
         var canvas = document.getElementById("plansza");
         plansza.style.display = "none";
 
         var end = document.getElementById("game_over");
-        end.style.display = "block";
+        end.style.display = "flex";
 
         document.getElementById("score").innerHTML=licznik;
 
@@ -74,7 +97,6 @@ function move()
         container.style.alignItems = "center";
         container.style.justifyContent = "center";
         container.style.height = "100vh";
-    }
 }
 
 
