@@ -222,7 +222,7 @@ if(height < 1060)
 {
     var phone = document.getElementById("phone");
     phone.style.display = "none";
-    speed=200;
+    speed=100;
 }
 else 
 {
