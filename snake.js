@@ -112,10 +112,10 @@ function replay()
 }
 
 
-document.getElementById("go_up").addEventListener("click", up);
-document.getElementById("go_left").addEventListener("click", left);
-document.getElementById("go_right").addEventListener("click", right);
-document.getElementById("go_down").addEventListener("click", down);
+document.getElementById("go_up").addEventListener("touchend", up);
+document.getElementById("go_left").addEventListener("touchend", left);
+document.getElementById("go_right").addEventListener("touchend", right);
+document.getElementById("go_down").addEventListener("touchend", down);
 
 function up()
 {
