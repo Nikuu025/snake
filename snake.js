@@ -54,6 +54,27 @@ function move()
         snake.unshift(head);
         snake.pop();
     }
+
+    if(snake[0].x == 500 || snake[0].x == 0 || snake[0].y == 500 || snake[0].y == 0)
+    {
+        console.log("game over");
+
+        var canvas = document.getElementById("plansza");
+        plansza.style.display = "none";
+
+        var end = document.getElementById("game_over");
+        end.style.display = "block";
+
+        document.getElementById("score").innerHTML=licznik;
+
+        var wynik = document.getElementById("wynik_div");
+        wynik.style.display = "none";
+
+        var container = document.getElementById("container");
+        container.style.alignItems = "center";
+        container.style.justifyContent = "center";
+        container.style.height = "100vh";
+    }
 }
 
 
