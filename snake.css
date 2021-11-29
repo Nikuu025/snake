@@ -56,12 +56,12 @@ body
 
 @keyframes animacja
 {
-    0% {background-color: red;}
-    1% {background-color: black;}
+    
+    0% {background-color: black;}
     50% {background-color: black;}
     51% {background-color: red;}
-    99% {background-color: red;}
-    100% {background-color: black;}
+    100% {background-color: red;}
+    
 }
 
 
