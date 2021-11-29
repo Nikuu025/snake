@@ -209,10 +209,11 @@ function main()
         random_food(fx, fy);
         move();
         drawSnake();
-    }, 100);
+    }, speed);
     
 }
 
+    var speed = 100;
 
 var height = window.innerHeight;
 console.log(height);
@@ -221,6 +222,11 @@ if(height < 1060)
 {
     var phone = document.getElementById("phone");
     phone.style.display = "none";
+    speed=300;
+}
+else 
+{
+    speed = 100;
 }
 
 main();
