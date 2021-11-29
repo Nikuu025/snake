@@ -6,4 +6,22 @@ canvas
 body 
 {
     background-color: black;
+    color: white;
+    font-family: 'Press Start 2P', cursive;
 }
+
+
+.container 
+{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+#wynik_div 
+{
+    height: 50px;
+    text-align: right;
+    font-size: 20px;
+}
+

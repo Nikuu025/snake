@@ -2,11 +2,22 @@
 <html>
     <head>
         <link rel="stylesheet" href="snake.css"/>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     </head>
     <body>
-        <canvas id="plansza" width="500" height="500">
+        <div class="container">
+            <div id="main">
+                <div id="wynik_div">
+                    Punkty: <span id="wynik"></span>
+                </div>
+                <canvas id="plansza" width="500" height="500">
 
-        </canvas>
+                </canvas>
+            </div>
+        </div>
         <script src="snake.js" type="text/javascript"></script>
     </body>
 </html>

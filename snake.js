@@ -46,6 +46,8 @@ function move()
         fx = random_number(20, 480);
         fy = random_number(20, 480);
         snake.unshift(head);
+        licznik++;
+        document.getElementById("wynik").innerHTML=licznik;
     }
     else 
     {
@@ -111,6 +113,8 @@ document.addEventListener("keydown", direction);
 
     let fx = random_number(20, 480);
     let fy = random_number(20, 480);
+
+    let licznik = 0;
 
 function main()
 {
