@@ -230,6 +230,8 @@ document.addEventListener("keydown", direction);
 function main()
 {
 
+    document.getElementById("play_button").style.display = "none";
+    
     var background_audio = new Audio('background.mp3');
     background_audio.volume = 0.2;
     background_audio.play();
@@ -269,6 +271,6 @@ else
     speed = 200;
 }
 
-document.getElementById("version").innerHTML="v1.1.1";
+document.getElementById("version").innerHTML="v1.1.2";
 
 //main();
