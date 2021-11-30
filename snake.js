@@ -68,9 +68,9 @@ function move()
     //console.log(snake.length);
 }
 
-    var hx;
+    var hx; /* hx i hy to pozycje głowy węża */
     var hy;
-    var moveCount = 0;
+    var moveCount = 0;  /* Liczy przesunięcia aby funkcja kolizji nie uruchamiała się na początku gdy snake generuje sie na 1 polu */
 
 
 function collision(hx, hy)
@@ -106,10 +106,9 @@ function game_over()
         var phone = document.getElementById("phone");
         phone.style.display = "none";
 
-        var container = document.getElementById("container");
-        container.style.alignItems = "center";
-        container.style.justifyContent = "center";
-        container.style.height = "100vh";
+        var middle = document.getElementById("middle");
+        middle.style.display = "none";
+
 }
 
 document.getElementById("replay").addEventListener("click", replay);
@@ -240,4 +239,4 @@ else
     speed = 200;
 }
 
-main();
+//main();

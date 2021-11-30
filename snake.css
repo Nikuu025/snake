@@ -105,3 +105,42 @@ body
 
 
 
+#middle
+{
+    display: flex;
+    margin-top: 10px;
+    width: 498px;
+    align-items: center;
+    font-size: 20px;
+}
+
+#play_button
+{
+    color: black;
+    background-color: white;
+    padding: 20px;
+}
+
+#version
+{
+    text-align: right;
+}
+
+.middle_container
+{
+    width: 50%;
+    display: flex;
+}
+
+#middle_left
+{
+    justify-content: flex-start;
+}
+
+#middle_right
+{
+    justify-content: flex-end;
+}
+
+
+
