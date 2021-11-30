@@ -60,19 +60,29 @@ function move()
         game_over();
     }
 
-    //kolizja();
-    console.log(snake.length);
+    hx = snake[0].x;
+    hy = snake[0].y
+    moveCount++;
+    //console.log(moveCount);
+    //collision(hx, hy);
+    //console.log(snake.length);
 }
 
+    var hx;
+    var hy;
+    var moveCount = 0;
 
-function kolizja()
+
+function collision(hx, hy)
 {
-    console.log(snake.length);
-    for(let a=1; a<snake.length; a++)
+    //console.log(snake.length);
+    for(var a=1; a<=snake.length; a++)
     {
-        if(head.x == snake[a].x && head.y == snake[a].y)
+        if(hx == snake[a].x && hy == snake[a].y && moveCount > 10)
         {
             game_over();
+            console.log("collision");
+            //console.log(snake[1].x);
         }
     }
 }
@@ -209,6 +219,7 @@ function main()
         random_food(fx, fy);
         move();
         drawSnake();
+        collision(hx, hy);
     }, speed);
     
 }
