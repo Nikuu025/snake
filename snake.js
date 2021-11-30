@@ -35,7 +35,7 @@ function drawSnakeElement(snakeElement)
 var dx=10;
 var dy=0;
 
-function move()
+function move(background_audio)
 {
     var head = {x: snake[0].x + dx, y: snake[0].y + dy};
     
@@ -48,6 +48,9 @@ function move()
         snake.unshift(head);
         licznik++;
         document.getElementById("wynik").innerHTML=licznik;
+
+        var score_audio = new Audio('score.mp3');
+        score_audio.play();
     }
     else 
     {
@@ -57,7 +60,7 @@ function move()
 
     if(snake[0].x == 500 || snake[0].x == 0 || snake[0].y == 500 || snake[0].y == 0)
     {
-        game_over();
+        game_over(background_audio);
     }
 
     hx = snake[0].x;
@@ -73,22 +76,24 @@ function move()
     var moveCount = 0;  /* Liczy przesunięcia aby funkcja kolizji nie uruchamiała się na początku gdy snake generuje sie na 1 polu */
 
 
-function collision(hx, hy)
+function collision(hx, hy, background_audio)
 {
     //console.log(snake.length);
     for(var a=1; a<=snake.length; a++)
     {
         if(hx == snake[a].x && hy == snake[a].y && moveCount > 10)
         {
-            game_over();
+            game_over(background_audio);
             console.log("collision");
             //console.log(snake[1].x);
         }
     }
 }
 
+/*Licznik jest potrzebny bo game over przy kolizji odpalało się 2 razy */
+var licznik_over = 0;    
 
-function game_over()
+function game_over(background_audio)
 {
     console.log("game over");
 
@@ -109,6 +114,17 @@ function game_over()
         var middle = document.getElementById("middle");
         middle.style.display = "none";
 
+        background_audio.pause();
+
+        
+        if(licznik_over < 1)
+        {
+        var gameover_audio = new Audio('gameover.mp3');
+        gameover_audio.play();
+        licznik_over++;
+        }
+
+        
 }
 
 document.getElementById("replay").addEventListener("click", replay);
@@ -213,13 +229,27 @@ document.addEventListener("keydown", direction);
 
 function main()
 {
-    setInterval(function step(){
-        clear();
-        random_food(fx, fy);
-        move();
-        drawSnake();
-        collision(hx, hy);
-    }, speed);
+
+    var background_audio = new Audio('background.mp3');
+    background_audio.volume = 0.2;
+    background_audio.play();
+
+    background_audio.addEventListener('ended', function() {
+        this.currentTime = 0;
+        this.play();
+    }, false);
+
+    
+        setInterval(function step(){
+            clear();
+            random_food(fx, fy);
+            move(background_audio);
+            drawSnake();
+            collision(hx, hy, background_audio);
+        }, speed);
+    
+
+    
     
 }
 
@@ -238,5 +268,7 @@ else
 {
     speed = 200;
 }
+
+document.getElementById("version").innerHTML="v1.1.1";
 
 //main();
