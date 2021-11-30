@@ -122,6 +122,12 @@ body
     padding: 20px;
 }
 
+#play_button:hover 
+{
+    background-color: #EEEEEE;
+    cursor: pointer;
+}
+
 #version
 {
     text-align: right;
