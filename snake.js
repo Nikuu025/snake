@@ -96,6 +96,7 @@ var licznik_over = 0;
 function game_over(background_audio)
 {
     console.log("game over");
+    game_status = "over";
 
         var canvas = document.getElementById("plansza");
         plansza.style.display = "none";
@@ -227,10 +228,17 @@ document.addEventListener("keydown", direction);
 
     let licznik = 0;
 
+    var game_status = "pre";
+
+    
+
+
 function main()
 {
 
     document.getElementById("play_button").style.display = "none";
+
+    game_status = "play";
     
     var background_audio = new Audio('background.mp3');
     background_audio.volume = 0.2;
