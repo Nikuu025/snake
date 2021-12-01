@@ -75,8 +75,8 @@ body
 
 #phone 
 {
-    width: 498px;
-    height: 498px;
+    width: 600px;
+    height: 600px;
     display: flex;
     flex-direction: column;
     margin-top: 10px;
@@ -86,20 +86,20 @@ body
 {
     display: flex;
     flex-direction: row;
-    width: 498px;
-    height: 166px;
+    width: 600px;
+    height: 200px;
 }
 
 .empty
 {
-    width: 166px;
-    height: 166px;
+    width: 200px;
+    height: 200px;
 }
 
 .direction_button
 {
-    width: 166px;
-    height: 166px;
+    width: 200px;
+    height: 200px;
     background-color: #333333;
     display: flex;
     align-items: center;
@@ -111,7 +111,7 @@ body
 {
     display: flex;
     margin-top: 10px;
-    width: 498px;
+    width: 600px;
     align-items: center;
     font-size: 20px;
     height: 60px;

@@ -43,8 +43,8 @@ function move(background_audio)
     if(fx == snake[0].x && fy == snake[0].y)
     {
         console.log("success");
-        fx = random_number(20, 480);
-        fy = random_number(20, 480);
+        fx = random_number(20, 580);
+        fy = random_number(20, 580);
         snake.unshift(head);
         licznik++;
         document.getElementById("wynik").innerHTML=licznik;
@@ -58,7 +58,7 @@ function move(background_audio)
         snake.pop();
     }
 
-    if(snake[0].x == 500 || snake[0].x == 0 || snake[0].y == 500 || snake[0].y == 0)
+    if(snake[0].x == 600 || snake[0].x == 0 || snake[0].y == 600 || snake[0].y == 0)
     {
         game_over(background_audio);
     }
@@ -222,8 +222,8 @@ document.addEventListener("keydown", direction);
         planszaCtx.strokeRect(x, y, 10, 10);
     }
 
-    let fx = random_number(20, 480);
-    let fy = random_number(20, 480);
+    let fx = random_number(20, 580);
+    let fy = random_number(20, 580);
 
     let licznik = 0;
 
