@@ -4,8 +4,8 @@ var planszaCtx = plansza.getContext("2d");
 
 var snake = [
     {x: 120, y: 120},
-    {x: 135, y: 120},
-    {x: 150, y: 120},
+    {x: 140, y: 120},
+    {x: 160, y: 120},
 ]
 
 
@@ -27,12 +27,12 @@ function clear()
 function drawSnakeElement(snakeElement)
 {
     planszaCtx.fillStyle = "lightgreen";
-    planszaCtx.fillRect(snakeElement.x, snakeElement.y, 15, 15);
+    planszaCtx.fillRect(snakeElement.x, snakeElement.y, 20, 20);
     //planszaCtx.strokestyle = "black";
     //planszaCtx.strokeRect(snakeElement.x, snakeElement.y, 10, 10);
 }
 
-var dx=15;
+var dx=20;
 var dy=0;
 
 function move(background_audio)
@@ -43,8 +43,8 @@ function move(background_audio)
     if(fx == snake[0].x && fy == snake[0].y)
     {
         console.log("success");
-        fx = random_number(30, 570);
-        fy = random_number(30, 570);
+        fx = random_number(40, 560);
+        fy = random_number(40, 560);
         snake.unshift(head);
         licznik++;
         document.getElementById("wynik").innerHTML=licznik;
@@ -58,7 +58,7 @@ function move(background_audio)
         snake.pop();
     }
 
-    if(snake[0].x == 600 || snake[0].x == 0 || snake[0].y == 600 || snake[0].y == 0)
+    if(snake[0].x == 600 || snake[0].x == -20 || snake[0].y == 600 || snake[0].y == -20)
     {
         game_over(background_audio);
     }
@@ -173,33 +173,33 @@ function direction(event)
     let przycisk = event;
     if(klawisz==37 || przycisk==37)
     {
-        if(dx != 15)
+        if(dx != 20)
         {
-            dx = -15;
+            dx = -20;
             dy = 0;
         }
     }
     else if(klawisz==40 || przycisk==40)
     {
-        if(dy != -15)
+        if(dy != -20)
         {
-            dy = 15;
+            dy = 20;
             dx = 0;
         }
     }
     else if(klawisz==39 || przycisk==39)
     {
-        if(dx != -15)
+        if(dx != -20)
         {
             dy = 0;
-            dx = 15;
+            dx = 20;
         }
     }
     else if(klawisz==38 || przycisk==38)
     {
-        if(dy != 15)
+        if(dy != 20)
         {
-            dy = -15;
+            dy = -20;
             dx = 0;
         }
     }
@@ -210,20 +210,20 @@ document.addEventListener("keydown", direction);
 
     function random_number(min, max)
     {
-        return Math.round((Math.random() * (max-min) + min) / 15) * 15;
+        return Math.round((Math.random() * (max-min) + min) / 20) * 20;
     }
 
 
     function random_food(x, y)
     {
         planszaCtx.fillStyle = "red";
-        planszaCtx.fillRect(x, y, 15, 15);
+        planszaCtx.fillRect(x, y, 20, 20);
         planszaCtx.strokestyle = "black";
-        planszaCtx.strokeRect(x, y, 15, 15);
+        planszaCtx.strokeRect(x, y, 20, 20);
     }
 
-    let fx = random_number(30, 570);
-    let fy = random_number(30, 570);
+    let fx = random_number(40, 560);
+    let fy = random_number(40, 560);
 
     let licznik = 0;
 
@@ -294,6 +294,6 @@ else
     speed = 200;
 }
 
-document.getElementById("version").innerHTML="v1.1.6";
+document.getElementById("version").innerHTML="v1.2.0";
 
 //main();
