@@ -294,6 +294,6 @@ else
     speed = 200;
 }
 
-document.getElementById("version").innerHTML="v1.1.5";
+document.getElementById("version").innerHTML="v1.1.6";
 
 //main();
