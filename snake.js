@@ -3,9 +3,9 @@ var planszaCtx = plansza.getContext("2d");
 
 
 var snake = [
-    {x: 100, y: 100},
-    {x: 110, y: 100},
-    {x: 120, y: 100},
+    {x: 120, y: 120},
+    {x: 135, y: 120},
+    {x: 150, y: 120},
 ]
 
 
@@ -27,12 +27,12 @@ function clear()
 function drawSnakeElement(snakeElement)
 {
     planszaCtx.fillStyle = "lightgreen";
-    planszaCtx.fillRect(snakeElement.x, snakeElement.y, 10, 10);
+    planszaCtx.fillRect(snakeElement.x, snakeElement.y, 15, 15);
     //planszaCtx.strokestyle = "black";
     //planszaCtx.strokeRect(snakeElement.x, snakeElement.y, 10, 10);
 }
 
-var dx=10;
+var dx=15;
 var dy=0;
 
 function move(background_audio)
@@ -43,8 +43,8 @@ function move(background_audio)
     if(fx == snake[0].x && fy == snake[0].y)
     {
         console.log("success");
-        fx = random_number(20, 580);
-        fy = random_number(20, 580);
+        fx = random_number(30, 570);
+        fy = random_number(30, 570);
         snake.unshift(head);
         licznik++;
         document.getElementById("wynik").innerHTML=licznik;
@@ -173,33 +173,33 @@ function direction(event)
     let przycisk = event;
     if(klawisz==37 || przycisk==37)
     {
-        if(dx != 10)
+        if(dx != 15)
         {
-            dx = -10;
+            dx = -15;
             dy = 0;
         }
     }
     else if(klawisz==40 || przycisk==40)
     {
-        if(dy != -10)
+        if(dy != -15)
         {
-            dy = 10;
+            dy = 15;
             dx = 0;
         }
     }
     else if(klawisz==39 || przycisk==39)
     {
-        if(dx != -10)
+        if(dx != -15)
         {
             dy = 0;
-            dx = 10;
+            dx = 15;
         }
     }
     else if(klawisz==38 || przycisk==38)
     {
-        if(dy != 10)
+        if(dy != 15)
         {
-            dy = -10;
+            dy = -15;
             dx = 0;
         }
     }
@@ -210,20 +210,20 @@ document.addEventListener("keydown", direction);
 
     function random_number(min, max)
     {
-        return Math.round((Math.random() * (max-min) + min) / 10) * 10;
+        return Math.round((Math.random() * (max-min) + min) / 15) * 15;
     }
 
 
     function random_food(x, y)
     {
         planszaCtx.fillStyle = "red";
-        planszaCtx.fillRect(x, y, 10, 10);
+        planszaCtx.fillRect(x, y, 15, 15);
         planszaCtx.strokestyle = "black";
-        planszaCtx.strokeRect(x, y, 10, 10);
+        planszaCtx.strokeRect(x, y, 15, 15);
     }
 
-    let fx = random_number(20, 580);
-    let fy = random_number(20, 580);
+    let fx = random_number(30, 570);
+    let fy = random_number(30, 570);
 
     let licznik = 0;
 
