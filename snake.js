@@ -47,7 +47,7 @@ function move(background_audio)
         fy = random_number(40, 560);
         snake.unshift(head);
         licznik++;
-        document.getElementById("wynik").innerHTML=licznik;
+        document.getElementById("wynik").innerHTML=licznik * multi;
 
         var score_audio = new Audio('score.mp3');
         score_audio.play();
@@ -103,7 +103,7 @@ function game_over(background_audio)
         var end = document.getElementById("game_over");
         end.style.display = "flex";
 
-        document.getElementById("score").innerHTML=licznik;
+        document.getElementById("score").innerHTML=licznik * multi;
 
         var wynik = document.getElementById("wynik_div");
         wynik.style.display = "none";
@@ -227,6 +227,30 @@ document.addEventListener("keydown", direction);
 
     let licznik = 0;
 
+
+
+
+    function pre(selector)
+    {
+        console.log(selector);
+
+        if(selector=="1") {speed = 150; multi = 2;}
+        if(selector=="2") {speed = 120; multi = 3;}
+        if(selector=="3") {speed = 90; multi = 5;}
+        if(selector=="4") {speed = 70; multi = 10;}
+        if(selector=="5") {speed = 30; multi = 20;}
+
+        document.getElementById("speed_choice").style.display="none";
+        document.getElementById("plansza").style.display="block";
+        document.getElementById("play_button").style.display="block";
+
+        console.log(multi);
+        console.log(speed);
+        
+    }
+
+
+
 function main()
 {
 
@@ -255,7 +279,8 @@ function main()
     
 }
 
-    var speed = 100;
+    var speed;
+    var multi; /* mnożnik punktów */
 
 
 
@@ -291,9 +316,9 @@ if(! isMobile.any() )
 }
 else 
 {
-    speed = 200;
+    speed = 150;
 }
 
-document.getElementById("version").innerHTML="v1.2.0";
+document.getElementById("version").innerHTML="v1.3.0";
 
 //main();

@@ -1,0 +1,11 @@
+pre menu - select speed, turn on/off music, odnośnik do strony z change logami wszystkich wersji
+
+speed + points multiplier
+slow - 150 - 2pkt
+medium - 120 - 3pkt
+fast - 90 - 5pkt
+V fast - 70 - 10pkt
+F fast - 30 - 20pkt
+
+
+zrobić żeby jabłka nie generowały się pod wężem
