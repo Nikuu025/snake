@@ -206,8 +206,9 @@ body
     font-size: 20px;
     display: flex;
     flex-direction: row;
-    height: 100px;
-    width: 600px;
+    height: 84px;
+    width: 584px;
+    border: 8px solid black;
 }
 
 .speed_selector:hover
