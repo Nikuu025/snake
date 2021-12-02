@@ -137,10 +137,12 @@ function replay()
 }
 
 
-document.getElementById("go_up").addEventListener("touchstart", up);
-document.getElementById("go_left").addEventListener("touchstart", left);
-document.getElementById("go_right").addEventListener("touchstart", right);
-document.getElementById("go_down").addEventListener("touchstart", down);
+    document.getElementById("go_up").addEventListener("touchstart", up);
+    document.getElementById("go_left").addEventListener("touchstart", left);
+    document.getElementById("go_right").addEventListener("touchstart", right);
+    document.getElementById("go_down").addEventListener("touchstart", down);
+
+
 
 function up()
 {
@@ -171,36 +173,40 @@ function direction(event)
 {
     let klawisz = event.keyCode;
     let przycisk = event;
-    if(klawisz==37 || przycisk==37)
+
+    if(youCanClick == true)
     {
-        if(dx != 20)
+        if(klawisz==37 || przycisk==37)
         {
-            dx = -20;
-            dy = 0;
+            if(dx != 20)
+            {
+                dx = -20;
+                dy = 0;
+            }
         }
-    }
-    else if(klawisz==40 || przycisk==40)
-    {
-        if(dy != -20)
+        else if(klawisz==40 || przycisk==40)
         {
-            dy = 20;
-            dx = 0;
+            if(dy != -20)
+            {
+                dy = 20;
+                dx = 0;
+            }
         }
-    }
-    else if(klawisz==39 || przycisk==39)
-    {
-        if(dx != -20)
+        else if(klawisz==39 || przycisk==39)
         {
-            dy = 0;
-            dx = 20;
+            if(dx != -20)
+            {
+                dy = 0;
+                dx = 20;
+            }
         }
-    }
-    else if(klawisz==38 || przycisk==38)
-    {
-        if(dy != 20)
+        else if(klawisz==38 || przycisk==38)
         {
-            dy = -20;
-            dx = 0;
+            if(dy != 20)
+            {
+                dy = -20;
+                dx = 0;
+            }
         }
     }
 }
@@ -250,11 +256,15 @@ document.addEventListener("keydown", direction);
     }
 
 
+    var youCanClick = false;
 
 function main()
 {
 
     document.getElementById("play_button").style.display = "none";
+
+    youCanClick = true;
+    
     
     var background_audio = new Audio('background.mp3');
     background_audio.volume = 0.2;
@@ -319,6 +329,6 @@ else
     speed = 150;
 }
 
-document.getElementById("version").innerHTML="v1.3.1";
+document.getElementById("version").innerHTML="v1.3.2";
 
 //main();
