@@ -1,5 +1,4 @@
-pre menu - select speed, turn on/off music, odnośnik do strony z change logami wszystkich wersji
-
+changelog
 
 
 zrobić żeby jabłka nie generowały się pod wężem

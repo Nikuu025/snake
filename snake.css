@@ -243,3 +243,86 @@ body
 }
 
 
+#start
+{
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    display: flex;
+    background-color: black;
+    flex-direction: column;
+}
+
+#start-top
+{
+    display: flex;
+    justify-content: flex-end;
+    height: 50px;
+}
+
+#close_start
+{
+    font-size: 32px;
+    padding: 9px;
+    cursor: pointer;
+}
+
+#close_start:hover
+{
+    background-color: red;
+}
+
+.start250px
+{
+    height: 250px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    font-size: 24px;
+}
+
+#start-bottom
+{
+    height: 50px;
+    width: 600px;
+    text-decoration: underline;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#start-bottom:hover
+{
+    background-color: white;
+    color: black;
+}
+
+#music
+{
+    width: 30px;
+    height: 30px;
+    border: 4px solid white;
+    margin-left: 10px;
+}
+
+.colorful
+{
+    animation: kolorki 10s infinite alternate;
+}
+
+@keyframes kolorki
+{
+    0% {color: white;}
+    30% {color: red;}
+    40% {color: yellow;}
+    60% {color: green;}
+    80% {color: blue;}
+    100% {color: white;}
+    
+}
+
+.music-yes
+{
+    background-image: url("checkmark.png");
+}
+

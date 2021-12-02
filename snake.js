@@ -114,7 +114,8 @@ function game_over(background_audio)
         var middle = document.getElementById("middle");
         middle.style.display = "none";
 
-        background_audio.pause();
+        
+        if(muzyka == 1) background_audio.pause();
 
         
         if(licznik_over < 1)
@@ -256,6 +257,34 @@ document.addEventListener("keydown", direction);
     }
 
 
+    function closeStart()
+    {
+        document.getElementById("start").style.display="none";
+    }
+
+
+    var muzyka = 1;
+
+    function music()
+    {
+        if(muzyka == 1)
+        {
+            muzyka = 0;
+            document.getElementById("music").removeAttribute("class");
+            console.log("music off");
+        }
+        else
+        {
+            muzyka = 1;
+            document.getElementById("music").setAttribute("class", "music-yes");
+            console.log("music on");
+        }
+    }
+
+
+
+
+
     var youCanClick = false;
 
 function main()
@@ -265,15 +294,20 @@ function main()
 
     youCanClick = true;
     
-    
-    var background_audio = new Audio('background.mp3');
-    background_audio.volume = 0.2;
-    background_audio.play();
+    var background_audio;
 
-    background_audio.addEventListener('ended', function() {
-        this.currentTime = 0;
-        this.play();
-    }, false);
+    if(muzyka == 1)
+    {
+        background_audio = new Audio('background.mp3');
+        background_audio.volume = 0.2;
+        background_audio.play();
+        background_audio.addEventListener('ended', function() {
+            this.currentTime = 0;
+            this.play();
+        }, false);
+    }
+
+    
 
     
         setInterval(function step(){
@@ -329,6 +363,6 @@ else
     speed = 150;
 }
 
-document.getElementById("version").innerHTML="v1.3.2";
+document.getElementById("version").innerHTML="v1.3.3";
 
 //main();
