@@ -100,10 +100,31 @@ body
 {
     width: 200px;
     height: 200px;
-    background-color: #333333;
+    /*background-color: #333333;*/
     display: flex;
     align-items: center;
     justify-content: center;
+    border-radius: 100px;
+}
+
+#go_up
+{
+    background-color: rgb(221, 221, 0);
+}
+
+#go_left
+{
+    background-color: rgb(58, 58, 255);
+}
+
+#go_right
+{
+    background-color: red;
+}
+
+#go_down
+{
+    background-color: rgb(16, 153, 16);
 }
 
 
