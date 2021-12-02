@@ -307,7 +307,7 @@ body
 
 .colorful
 {
-    animation: kolorki 10s infinite alternate;
+    animation: kolorki 10s infinite;
 }
 
 @keyframes kolorki
