@@ -179,7 +179,7 @@ function direction(event)
     {
         if(klawisz==37 || przycisk==37)
         {
-            if(dx != 20)
+            if(snake[0].x - snake[1].x != 20)
             {
                 dx = -20;
                 dy = 0;
@@ -187,7 +187,7 @@ function direction(event)
         }
         else if(klawisz==40 || przycisk==40)
         {
-            if(dy != -20)
+            if(snake[0].y - snake[1].y != -20)
             {
                 dy = 20;
                 dx = 0;
@@ -195,7 +195,7 @@ function direction(event)
         }
         else if(klawisz==39 || przycisk==39)
         {
-            if(dx != -20)
+            if(snake[0].x - snake[1].x != -20)
             {
                 dy = 0;
                 dx = 20;
@@ -203,7 +203,7 @@ function direction(event)
         }
         else if(klawisz==38 || przycisk==38)
         {
-            if(dy != 20)
+            if(snake[0].y - snake[1].y != 20)
             {
                 dy = -20;
                 dx = 0;
@@ -363,6 +363,6 @@ else
     speed = 150;
 }
 
-document.getElementById("version").innerHTML="v1.3.6";
+document.getElementById("version").innerHTML="v1.3.7";
 
 //main();

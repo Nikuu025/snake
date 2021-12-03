@@ -1,4 +1,11 @@
-changelog
-
+naprawić ten błąd
 
 zrobić żeby jabłka nie generowały się pod wężem
+
+pauza i wyskakujące wtedy menu z wyłączeniem muzyki
+
+odliczanie przed rozpoczęciem się gry
+
+zmienne prędkości i mnożnika przerobić na stałe
+
+włączanie gry enterem
