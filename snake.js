@@ -287,6 +287,32 @@ document.addEventListener("keydown", direction);
 
     var youCanClick = false;
 
+
+
+    function timer()
+    {
+        document.getElementById("3").style.display="block";
+        window.setTimeout(timer1, 1000);
+        window.setTimeout(timer2, 2000);
+
+
+        window.setTimeout(main, 3000);
+        
+    }
+
+    function timer1()
+    {
+        console.log("timer1");
+        document.getElementById("3").style.display="none";
+        document.getElementById("2").style.display="block";
+    }
+
+    function timer2()
+    {
+        document.getElementById("2").style.display="none";
+        document.getElementById("1").style.display="block";
+    }
+
 function main()
 {
 
@@ -306,6 +332,8 @@ function main()
             this.play();
         }, false);
     }
+
+    document.getElementById("1").style.display="none";
 
     
 
@@ -363,6 +391,6 @@ else
     speed = 150;
 }
 
-document.getElementById("version").innerHTML="v1.3.7";
+document.getElementById("version").innerHTML="v1.3.8";
 
 //main();
