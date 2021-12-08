@@ -3,7 +3,6 @@ zrobić żeby jabłka nie generowały się pod wężem
 
 pauza i wyskakujące wtedy menu z wyłączeniem muzyki
 
-odliczanie przed rozpoczęciem się gry
 
 ? zmienne prędkości i mnożnika przerobić na stałe
 albo zabezpieczenie liczące ile jabłek było zebrane i jaki jest lvl żeby zapobiec cheatowaniu przez zmiany w konsoli
