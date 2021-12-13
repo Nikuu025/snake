@@ -432,6 +432,6 @@ else
     document.getElementById("playmobile").innerHTML="";
 }
 
-document.getElementById("version").innerHTML="v1.4.1";
+document.getElementById("version").innerHTML="v1.4.2";
 
 //main();
