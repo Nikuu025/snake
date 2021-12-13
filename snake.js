@@ -426,13 +426,12 @@ if(! isMobile.any() )
 {
     var phone = document.getElementById("phone");
     phone.style.display = "none";
-    speed=100;
 }
 else 
 {
-    speed = 150;
+    document.getElementById("playmobile").innerHTML="";
 }
 
-document.getElementById("version").innerHTML="v1.4.0";
+document.getElementById("version").innerHTML="v1.4.1";
 
 //main();
