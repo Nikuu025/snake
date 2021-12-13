@@ -390,3 +390,11 @@ body
       display: none;
       font-size: 40px;
   }
+
+  #gameover
+  {
+      font-size: 60px;
+      text-align: center;
+      display: block;
+      width: 100%;
+  }

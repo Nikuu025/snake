@@ -97,13 +97,21 @@ function game_over(background_audio)
 {
     console.log("game over");
 
+    game_status = "over";
+
         var canvas = document.getElementById("plansza");
         plansza.style.display = "none";
 
         var end = document.getElementById("game_over");
         end.style.display = "flex";
 
+
         document.getElementById("score").innerHTML=licznik * multi;
+
+                if(s<10 && min<10)    document.getElementById("gametime").innerHTML="0"+min+":0"+s+":"+ms;
+                if(s>9 && min<10)    document.getElementById("gametime").innerHTML="0"+min+":"+s+":"+ms;
+                if(s>9 && min>9)    document.getElementById("gametime").innerHTML=min+":"+s+":"+ms;
+
 
         var wynik = document.getElementById("wynik_div");
         wynik.style.display = "none";
@@ -313,10 +321,44 @@ document.addEventListener("keydown", direction);
         document.getElementById("1").style.display="block";
     }
 
+    var ms = 0;
+    var s = 0;
+    var min = 0;
+
+    var game_status;
+
+    function clock()
+    {
+        
+
+        setInterval(function inClock(){
+            
+            if(game_status != "over")
+            {
+                ms++;
+                if(ms==10){ms=0; s++;}
+                if(s==60){s=0; min++;}
+                if(min==60){min=0; h++;}
+
+                if(s<10 && min<10)    document.getElementById("wynik_div_lewy").innerHTML="0"+min+":0"+s+":"+ms;
+                if(s>9 && min<10)    document.getElementById("wynik_div_lewy").innerHTML="0"+min+":"+s+":"+ms;
+                if(s>9 && min>9)    document.getElementById("wynik_div_lewy").innerHTML=min+":"+s+":"+ms;
+
+                console.log(s);
+        }
+
+
+        }, 100);
+
+
+    }
+
 function main()
 {
 
     document.getElementById("play_button").style.display = "none";
+
+    clock();
 
     youCanClick = true;
     
@@ -391,6 +433,6 @@ else
     speed = 150;
 }
 
-document.getElementById("version").innerHTML="v1.3.8";
+document.getElementById("version").innerHTML="v1.4.0";
 
 //main();
