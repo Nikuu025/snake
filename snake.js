@@ -101,6 +101,7 @@ function game_over(background_audio)
 
         var canvas = document.getElementById("plansza");
         plansza.style.display = "none";
+        
 
         var end = document.getElementById("game_over");
         end.style.display = "flex";
