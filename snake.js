@@ -433,6 +433,6 @@ else
     document.getElementById("playmobile").innerHTML="";
 }
 
-document.getElementById("version").innerHTML="v1.4.2";
+document.getElementById("version").innerHTML="v1.4.3";
 
 //main();
